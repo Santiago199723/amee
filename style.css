@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    transition: 1s;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url(bg.png);
+    background-attachment: fixed;
+
+}
+
+.nav-link {
+    color: white;
+}
+
+
+.navbar-brand {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    margin-left: 20px;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.nav-link {
+
+    color: rgb(255, 255, 255);
+    margin-right: 25px;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    /* background-color: rgb(78, 44, 44); */
+    padding: 3px 0px;
+    /* border: 1px solid white; */
+
+}
+
+nav ul li a:after {
+
+    content: " ";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    color: white;
+    background-color: rgb(243, 21, 21);
+    position: absolute;
+    transition: 0.4s;
+}
+
+
+nav ul li a:hover:after {
+    width: 100%;
+    color: white;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.myNavbar {
+
+    background-color: black;
+    position: sticky;
+    top: 0;
+
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: right;
+}
+
+.navbar-toggler {
+
+    color: transparent;
+
+}
+
+#myIcon {
+    color: white;
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.navM {
+    color: red;
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.majeed {
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.center {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+
+}
+
+.center-box {
+    height: 500px;
+    width: 800px;
+    text-align: center;
+    /* background-color: blue; */
+}
+
+.center-box span {
+
+    color: white;
+
+    font-size: 23px;
+}
+
+.center-box h1 {
+
+    color: white;
+    font-size: 60px;
+}
+
+.center-box p {
+    color: white;
+    font-size: 20px;
+}
+.btn1 {
+    height: 45px;
+    width: 180px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(239, 49, 11);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(239, 49, 11, 0.5);
+    animation: pulsar-cora 2.2s infinite ease-in-out;
+}
+
+/* Efeito de pulsação estilo coração */
+@keyframes pulsar-cora {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efeito ao passar o mouse */
+.btn1:hover {
+    background-color: rgb(200, 40, 10);
+    box-shadow: 0 0 20px rgba(239, 49, 11, 0.9);
+    transform: scale(1.1);
+}
+
+
+
+
+.btn2 {
+    height: 45px;
+    width: 160px;
+    border-radius: 30px;
+    border: none;
+    background-color: transparent;
+    color: rgb(243, 14, 14);
+    border: 2px solid rgb(234, 8, 8);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.btn2:hover {
+    color: white;
+    background-color: rgb(234, 8, 8);
+    box-shadow: 0 0 15px rgba(234, 8, 8, 0.8), 0 0 30px rgba(234, 8, 8, 0.5);
+    transform: scale(1.05);
+}
+
+/* Brilho ao redor do botão */
+.btn2::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 30px;
+    background: rgba(234, 8, 8, 0.5);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Ativar brilho ao passar o mouse */
+.btn2:hover::before {
+    opacity: 1;
+}
+
+.btn1, .btn2 {
+    margin-right: 10px; /* Adiciona espaço entre os botões */
+}
+
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto; /* Centraliza na página */
+    margin-top: 70px; /* Aumente esse valor para descer mais */
+    border-radius: 15px;
+    overflow: visible; /* Permite que o brilho apareça */
+    padding: 10px; /* Espaço para não cortar o efeito */
+}
+
+/* Borda brilhosa */
+.video-container::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 120px;
+    background: linear-gradient(45deg, red, rgb(247, 88, 114), purple, red);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.styled-video {
+    width: 250px; /* Ajuste a largura se precisar */
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 80px rgba(282, 41, 41, 0.8); /* Deixei a sombra mais forte */
+}
+
+/* Botão play/pause no centro do vídeo */
+.video-btn {
+    position: absolute;
+    background: rgba(41, 40, 40, 0.7);
+    border: none;
+    width: 65px;
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 350px;
+    cursor: pointer;
+    transition: 0.3s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-btn:hover {
+    background: rgba(253, 30, 41, 0.8);
+}
+
+/* Botão de som no canto inferior direito */
+.mute-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 630px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 17px;
+    padding: 9px;
+    border-radius: 70%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mute-btn:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+
+
+.center-box .yelo {
+    color: rgb(218, 22, 19);
+    font-size: 60px;
+}
+
+.main2 {
+    min-height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.right-span {
+    color: rgb(239, 40, 9);
+}
+
+
+
+.main2-left {
+    width: 40%;
+    background-size: cover;
+  
+}
+.main2-left img{
+    height: 540px;
+    width: 90%;
+}
+
+
+.main2-right {
+    min-height: 89%;
+    width: 60%;
+    padding: 30px;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #d32f2f; /* Vermelho bonito */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 1.5s infinite;
+}
+
+.whatsapp-btn {
+    margin-top: 80px; /* Aumente esse valor para descer mais */
+}
+
+
+.whatsapp-btn i {
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Efeito pulsante */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.profile-image {
+    width: 400px;  /* Ajuste o tamanho conforme necessário */
+    height: 400px; 
+    border-radius: 50%; /* Deixa a imagem redonda */
+}
+
+footer {
+    background: #f18c8c;
+    color: rgb(245, 210, 210);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: auto;
+    margin-top: 217px;
+    background-color: #300808; /* Cor de fundo escura */
+    color: white; /* Cor do texto */
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+    
+}
+
+.footer-section h3 {
+    color: #f7310e;
+    margin-bottom: 15px;
+    
+}
+
+.footer-section p, 
+.footer-section a {
+    color: #a49f9f;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f7310e;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    color: rgb(144, 138, 138);
+    margin: 0 10px;
+    font-size: 40px;
+}
+
+.footer-social a:hover {
+    color: #ae240b;
+}
+
+  
+
+  
+  
+
+.imagem-estilosa {
+    width: 100%; /* Faz a imagem ser responsiva */
+    max-width: 500px; /* Tamanho máximo */
+    border-radius: 18px; /* Borda arredondada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito ao passar o mouse */
+.imagem-estilosa:hover {
+    transform: scale(1.03); /* Aumenta a imagem um pouco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais forte ao passar o mouse */
+}
+
+
+
+
+.botao-pulsante {
+    background-color: #ff4500; /* Cor vibrante */
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 35px;
+    padding: 10px 20px;
+    margin-top: 11px; /* Ajuste o valor conforme necessário */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulsar 1.5s infinite;
+}
+
+/* Animação de pulsação */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+    }
+}
+
+/* Efeito ao passar o mouse */
+.botao-pulsante:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+}
+
+
+p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(81, 18, 18);
+    line-height: 1.6;
+    text-align: center; /* Alinhamento justificado */
+
+}
+
+
+
+.descricao-projeto {
+    font-family: 'sans-serif', cursive;
+    font-size: 21px;
+    font-weight: bold;
+    color: rgb(63, 32, 32);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.author {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: right; /* Centraliza o texto dentro do elemento */
+    margin-right: 310px;
+    color: rgb(59, 11, 11);
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main3 {
+  min-height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(1.jpg);
+    background-attachment: fixed;
+}
+
+.main4 {
+    min-height: 70vh;
+    text-align: center;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(255, 255, 255);
+    /* background-attachment: fixed; */
+}
+.main4 h1{
+     padding-top: 15px;
+}
+.bmw{
+    width: 100%;
+    margin-top: 40px;
+    /* background-color: rgb(36, 81, 177); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pastor-cards{
+    height: 480px;
+    width: 300px;
+    /* background-color: black; */
+}
+.pastor-cards img{
+    height: 320px;
+}
+.pastor-cards h2{
+
+    font-size: 20px;
+    padding-top: 12px;
+
+}
+.pastor-cards span{
+    font-size: 15px;
+}
+.pastor-cards i{
+    padding: 10px 2px;
+}
+.main5{
+    height: 115vh;
+    width: 100%;
+    /* background-color: rgb(29, 20, 20); */
+    text-align: center;
+}
+.main5 h1{
+
+    padding-top: 20px;
+}
+.main-5center{
+    height: 70vh;
+    width: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.a5center-left{
+
+    height: 100%;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+
+}
+.a5center-right{
+
+    height: 100%;
+    width: 50%;
+    /* background-color: rgb(224, 64, 24); */
+
+}
+.a5center-left h3{
+    font-size: 17px;
+    margin-top: 20px;
+}
+.a5center-left i{
+    font-size: 15px;
+   color:  rgb(181, 224, 101) ;
+}
+
+.a5center-right input[type='text']{
+
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid rgb(219, 221, 217);
+    margin-top: 10px;
+    width: 80%;
+    padding-left: 10px;
+}
+.a5center-right textarea{
+
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid rgb(219, 221, 217);
+}
+.a5center-right button{
+
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border: none;
+    background-color:  rgb(243, 103, 103) ;
+}
+
+footer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 470px; /* Aumente esse valor para descer mais */
+    background-color: rgb(155, 38, 38);
+}
+
+
+
+
+
+
+@media screen and (max-width : 700px) {
+
+    .nav-link {
+
+        margin-right: 0;
+        text-align: right;
+    }
+
+    .btn2 {
+
+        margin-top: 20px;
+    }
+
+    .main2 {
+        flex-direction: column;
+    }
+
+    .main2-right {
+        width: 100%;
+
+    }
+
+    .main2-right p {
+        margin-top: 10px;
+    }
+    .main2-left{
+
+        width: 100%;
+    }
+    .main2-left img{
+
+        width: 100%;
+    }
+
+
+    
+
+
+}
