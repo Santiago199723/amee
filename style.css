@@ -8,15 +8,16 @@
 }
 
 .main {
-  min-height: 100vh;
-  background-position: center;
-  background-size: cover;
-  transition: 1s;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)),
-    url(bg.png);
-  background-attachment: fixed;
+  min-height: 100vh;  /* A altura mínima será sempre 100% da altura da tela */
+  background-position: center; /* Centraliza a imagem */
+  background-size: cover;  /* Garante que a imagem cubra toda a área sem distorção */
+  transition: 1s;  /* Transição suave para a mudança da imagem */
+  background-repeat: no-repeat;  /* Evita que a imagem se repita */
+  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url('bg.png');  /* A imagem de fundo */
+  background-attachment: fixed;  /* A imagem não se move ao rolar a página */
+  object-fit: cover;  /* Garante que a imagem se ajuste bem em dispositivos móveis também */
 }
+
 
 .nav-link {
   color: white;
@@ -230,19 +231,6 @@ nav ul li a:hover:after {
   padding: 10px; /* Espaço para não cortar o efeito */
 }
 
-/* Borda brilhosa */
-.video-container::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 120px;
-  background: linear-gradient(45deg, red, rgb(247, 88, 114), purple, red);
-  filter: blur(10px);
-  z-index: -1;
-}
 
 .styled-video {
   width: 250px; /* Ajuste a largura se precisar */
@@ -272,24 +260,8 @@ nav ul li a:hover:after {
   background: rgba(253, 30, 41, 0.8);
 }
 
-/* Botão de som no canto inferior direito */
-.mute-btn {
-  position: absolute;
-  bottom: 16px;
-  right: 630px;
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
-  color: white;
-  font-size: 17px;
-  padding: 9px;
-  border-radius: 70%;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.mute-btn:hover {
-  background: rgba(255, 0, 0, 0.8);
-}
+
 
 .center-box .yelo {
   color: rgb(218, 22, 19);
@@ -661,3 +633,27 @@ footer {
     width: 100%;
   }
 }
+
+#carrosselAME {
+  max-width: 600px;
+  margin: 80px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgb(240, 87, 87); /* Borda vermelha sólida */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 
+              0 0 30px rgba(255, 0, 0, 0.6), 
+              0 0 45px rgba(255, 0, 0, 0.4); /* Efeito de brilho */
+  transition: all 0.3s ease-in-out;
+}
+
+#carrosselAME:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1), 
+              0 0 40px rgba(255, 0, 0, 0.8), 
+              0 0 60px rgba(255, 0, 0, 0.6); /* Aumenta o brilho ao passar o mouse */
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  height: 350px;
+}
+

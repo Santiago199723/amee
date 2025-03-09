@@ -15,25 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
 const video = document.getElementById("meuVideo");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const muteBtn = document.getElementById("muteBtn");
+const audio = document.getElementById("background-music"); // Pegando o elemento de áudio
 
 playPauseBtn.addEventListener("click", () => {
-    if (video.paused) {
-        video.play();
-        playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'; // Ícone de pausa
-    } else {
-        video.pause();
-        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // Ícone de play
-    }
+  if (video.paused) {
+      video.play();
+      audio.play(); // 🔊 Agora o áudio também toca!
+      playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'; // Ícone de pausa
+  } else {
+      video.pause();
+      audio.pause(); // 🔇 O áudio também pausa se o vídeo parar
+      playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // Ícone de play
+  }
 });
 
 muteBtn.addEventListener("click", () => {
-    if (video.muted) {
-        video.muted = false;
-        muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; // Ícone de volume ligado
-    } else {
-        video.muted = true;
-        muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'; // Ícone de volume desligado
-    }
+  if (video.muted) {
+      video.muted = false;
+      audio.muted = false; // 🔊 Desmuta o áudio junto com o vídeo
+      muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; // Ícone de volume ligado
+  } else {
+      video.muted = true;
+      audio.muted = true; // 🔇 Muta o áudio junto com o vídeo
+      muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'; // Ícone de volume desligado
+  }
 });
 
 
@@ -54,7 +59,7 @@ setInterval(() => {
 
   if (loo == 3) {
 
-    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(four (1).jpg)`
+    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(imagem3.jpeg)`
 
   }
   if( loo == 4 ){
