@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 
 * {
   margin: 0;
@@ -126,7 +128,7 @@ nav ul li a:hover:after {
 
 .center-box p {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
 }
 .btn1 {
   height: 45px;
@@ -238,19 +240,19 @@ nav ul li a:hover:after {
 
 
 .styled-video {
-  width: 250px; /* Ajuste a largura se precisar */
+  width: 390px; /* Ajuste a largura se precisar */
   height: auto;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0px 0px 80px rgba(282, 41, 41, 0.8); /* Deixei a sombra mais forte */
 }
 
 /* Botão play/pause no centro do vídeo */
 .video-btn {
   position: absolute;
-  background: rgba(41, 40, 40, 0.7);
+  background: rgba(29, 29, 29, 0.7);
   border: none;
   width: 65px;
-  color: white;
+  color: rgb(151, 10, 10);
   font-size: 22px;
   padding: 15px;
   border-radius: 350px;
@@ -311,8 +313,8 @@ nav ul li a:hover:after {
   align-items: center;
   background-color: #d32f2f; /* Vermelho bonito */
   color: white;
-  padding: 12px 20px;
-  font-size: 18px;
+  padding: 8px 14px;
+  font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   border-radius: 35px;
@@ -401,7 +403,7 @@ footer {
 .footer-social a {
   color: rgb(144, 138, 138);
   margin: 0 10px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .footer-social a:hover {
@@ -425,11 +427,11 @@ footer {
 .botao-pulsante {
   background-color: #ff4500; /* Cor vibrante */
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   border: none;
   border-radius: 35px;
-  padding: 10px 20px;
+  padding: 7px 15px;
   margin-top: 11px; /* Ajuste o valor conforme necessário */
   cursor: pointer;
   display: inline-flex;
@@ -464,16 +466,18 @@ footer {
 
 p {
   font-family: "Great Vibes", cursive;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
   color: rgb(81, 18, 18);
   line-height: 1.6;
-  text-align: center; /* Alinhamento justificado */
+  text-align: center; /* Agora o texto ficará justificado */
+  margin: 25px; /* Adiciona 20px de margem em todos os cantos */
+
 }
 
 .descricao-projeto {
   font-family: "sans-serif", cursive;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: bold;
   color: rgb(63, 32, 32);
   line-height: 1.6;
@@ -482,12 +486,13 @@ p {
 
 .author {
   font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: right; /* Centraliza o texto dentro do elemento */
-  margin-right: 310px;
+  font-size: 14px;
+  font-weight: 450;
+  text-align: right; /* Mantém o texto alinhado à direita */
+  margin-right: 40px;
   color: rgb(59, 11, 11);
   margin-top: 10px;
+  white-space: nowrap; /* Impede que o nome quebre para a próxima linha */
 }
 
 .main3 {
@@ -548,14 +553,7 @@ p {
 .main5 h1 {
   padding-top: 20px;
 }
-.main-5center {
-  height: 70vh;
-  width: 100%;
-  /* background-color: yellow; */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
 .a5center-left {
   height: 100%;
   width: 50%;
@@ -640,7 +638,7 @@ footer {
 }
 
 #carrosselAME {
-  max-width: 380px;
+  max-width: 350px;
   margin: 80px auto;
   border-radius: 20px;
   overflow: hidden;
@@ -660,6 +658,39 @@ footer {
 .carousel-inner img {
   object-fit: cover;
   height: 350px;
+}
+
+
+
+
+#countdown-container {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  background: rgba(254, 237, 237, 0.486);
+  padding: 20px;
+  border-radius: 10px;
+  color: rgb(138, 5, 5);
+  margin: 30px auto;
+  max-width: 500px;
+  border: 1px solid rgb(241, 143, 143); /* Borda vermelha sólida */
+  box-shadow: 0 0 15px rgba(227, 123, 123, 0.8), 
+              0 0 30px rgba(245, 164, 164, 0.726), 
+              0 0 45px rgba(246, 116, 116, 0.4); /* Efeito de brilho */
+  transition: all 0.3s ease-in-out;
+}
+
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #ed1212;
 }
 
 

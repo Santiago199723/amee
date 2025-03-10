@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Contraction</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" ></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+
+        img.src = 'bg.png';
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0);
+            contractPart(2, 260, 425, 874, 423, 614);
+        };
+
+        function contractPart(x1, y1, x2, y2, newWidth, newHeight) {
+            const width = x2 - x1;
+            const height = y2 - y1;
+            ctx.drawImage(img, x1, y1, width, height, x1, y1, newWidth, newHeight);
+        }
+    </script>
+</body>
+</html>

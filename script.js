@@ -29,7 +29,8 @@ playPauseBtn.addEventListener("click", () => {
   }
 });
 
-muteBtn.addEventListener("click", () => {
+if (muteBtn) {
+  muteBtn.addEventListener("click", () => {
   if (video.muted) {
       video.muted = false;
       audio.muted = false; // 🔊 Desmuta o áudio junto com o vídeo
@@ -40,6 +41,9 @@ muteBtn.addEventListener("click", () => {
       muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'; // Ícone de volume desligado
   }
 });
+}
+
+
 
 
 setInterval(() => {
@@ -74,5 +78,43 @@ setInterval(() => {
   console.log(loo);
 
 }, 5000);
+
+function getNextSaturday() {
+  let now = new Date();
+  let nextSaturday = new Date(now);
+  nextSaturday.setDate(now.getDate() + (6 - now.getDay() + 7) % 7);
+  nextSaturday.setHours(15, 30, 0, 0);
+  return nextSaturday;
+}
+
+function updateCountdown() {
+  let eventDate = getNextSaturday().getTime();
+  let now = new Date().getTime();
+  let distance = eventDate - now;
+
+  if (distance <= 0) {
+      document.querySelector(".countdown").innerHTML = "¡El evento ya comenzó!";
+      return;
+  }
+
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+  localStorage.setItem("countdown", JSON.stringify({ days, hours, minutes, seconds }));
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+});
+
+
 
 
