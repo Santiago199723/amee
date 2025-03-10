@@ -116,5 +116,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+const images = [
+  "camisa.png",
+  "verso.png",
+];
+let currentIndex = 0;
+
+function trocarImagem(index) {
+  document.getElementById("product-image").src = images[index];
+}
+
+function comprarAgora() {
+  window.location.href = "https://wa.link/hna1dm";
+}
 
 
