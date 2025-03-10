@@ -123,12 +123,12 @@ nav ul li a:hover:after {
 
 .center-box h1 {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .center-box p {
   color: white;
-  font-size: 14px;
+  font-size: 13px;
 }
 .btn1 {
   height: 45px;
@@ -240,7 +240,7 @@ nav ul li a:hover:after {
 
 
 .styled-video {
-  width: 390px; /* Ajuste a largura se precisar */
+  width: 355px; /* Ajuste a largura se precisar */
   height: auto;
   border-radius: 20px;
   box-shadow: 0px 0px 80px rgba(282, 41, 41, 0.8); /* Deixei a sombra mais forte */
@@ -469,7 +469,7 @@ p {
   font-size: 12px;
   font-weight: bold;
   color: rgb(81, 18, 18);
-  line-height: 1.6;
+  line-height: 1.9;
   text-align: center; /* Agora o texto ficará justificado */
   margin: 25px; /* Adiciona 20px de margem em todos os cantos */
 
@@ -482,6 +482,8 @@ p {
   color: rgb(63, 32, 32);
   line-height: 1.6;
   text-align: justify;
+  margin: 0 0.5px; /* Adiciona espaçamento à esquerda e direita da descrição */
+
 }
 
 .author {
@@ -638,7 +640,7 @@ footer {
 }
 
 #carrosselAME {
-  max-width: 350px;
+  max-width: 330px;
   margin: 80px auto;
   border-radius: 20px;
   overflow: hidden;
