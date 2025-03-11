@@ -7,15 +7,19 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+
 }
 
 .main {
+  width: 100%;
+  height: 100vh;
   min-height: 100vh;  /* A altura mínima será sempre 100% da altura da tela */
   background-position: center; /* Centraliza a imagem */
   background-size: cover;  /* Garante que a imagem cubra toda a área sem distorção */
   transition: 1s;  /* Transição suave para a mudança da imagem */
   background-repeat: no-repeat;  /* Evita que a imagem se repita */
-  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url('bg.png');  /* A imagem de fundo */
+  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url('bg.jpg');  /* A imagem de fundo */
   background-attachment: fixed;  /* A imagem não se move ao rolar a página */
   object-fit: cover;  /* Garante que a imagem se ajuste bem em dispositivos móveis também */
 }
@@ -128,7 +132,7 @@ nav ul li a:hover:after {
 
 .center-box p {
   color: white;
-  font-size: 13px;
+  font-size: 12px;
 }
 .btn1 {
   height: 45px;
@@ -288,20 +292,6 @@ nav ul li a:hover:after {
   color: rgb(239, 40, 9);
 }
 
-.main2-left {
-  width: 40%;
-  background-size: cover;
-}
-.main2-left img {
-  height: 540px;
-  width: 90%;
-}
-
-.main2-right {
-  min-height: 89%;
-  width: 60%;
-  padding: 30px;
-}
 
 .cta-section {
   text-align: center;
@@ -497,14 +487,7 @@ p {
   white-space: nowrap; /* Impede que o nome quebre para a próxima linha */
 }
 
-.main3 {
-  min-height: 65vh;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: url("1.jpg");
-  background-attachment: fixed;
-}
+
 
 .main4 {
   min-height: 70vh;
@@ -774,4 +757,29 @@ footer {
   font-size: 1.8em;
   font-weight: bold;
   color: #d81313;
+}
+
+
+@media (max-width: 768px) {
+  .main {
+    background-attachment: scroll; /* Evita problemas de fundo em mobile */
+  }
+
+  .center {
+    flex-direction: column; /* Empilha os elementos no centro */
+    text-align: center;
+  }
+
+  .center-box {
+    width: 90%; /* Garante que o conteúdo não fique muito largo */
+  }
+
+  .main2-left, .main2-right {
+    width: 100%; /* Evita que os elementos fiquem apertados */
+    text-align: center;
+  }
+
+  .pastor-cards {
+    width: 90%; /* Ajusta os cards em telas menores */
+  }
 }
