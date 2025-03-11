@@ -487,7 +487,14 @@ p {
   white-space: nowrap; /* Impede que o nome quebre para a próxima linha */
 }
 
-
+.main3 {
+  min-height: 65vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url("1.jpg");
+  background-attachment: fixed;
+}
 
 .main4 {
   min-height: 70vh;
