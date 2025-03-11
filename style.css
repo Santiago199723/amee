@@ -19,7 +19,7 @@
   background-size: cover;  /* Garante que a imagem cubra toda a área sem distorção */
   transition: 1s;  /* Transição suave para a mudança da imagem */
   background-repeat: no-repeat;  /* Evita que a imagem se repita */
-  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url('bg.jpg');  /* A imagem de fundo */
+  background-image: linear-gradient(rgba(95, 93, 93, 0.5), rgba(67, 6, 6, 0.4)), url('imagem3.jpeg');  /* A imagem de fundo */
   background-attachment: fixed;  /* A imagem não se move ao rolar a página */
   object-fit: cover;  /* Garante que a imagem se ajuste bem em dispositivos móveis também */
 }
@@ -556,7 +556,7 @@ p {
   text-align: center;
 }
 .main5 h1 {
-  padding-top: 20px;
+  padding-top: 19px;
 }
 
 .a5center-left {
@@ -706,16 +706,32 @@ footer {
 }
 .product-card {
   background: rgb(253, 253, 253);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(16, 16, 16, 0.1);
+  box-shadow: 0 4px 8px rgba(16, 16, 16, 0.1); /* Sombra suave */
   text-align: center;
+  border-radius: 14px;
   max-width: 210px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   margin-top: 45px;
+  position: relative; /* Necessário para a borda luminosa */
+  border: 1px solid rgba(236, 4, 4, 0.336); /* Borda vermelha sólida */
+  box-shadow: 0 0 15px rgba(237, 89, 89, 0.253), 
+              0 0 30px rgba(244, 115, 115, 0.463), 
+              0 0 45px rgba(246, 116, 116, 0.4); /* Efeito de brilho */
+  transition: all 0.3s ease-in-out;
 }
-.product-card:hover {
-  transform: scale(1.03);
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
 }
+
+
+
+
 .image-container {
   width: 100%;
   display: flex;
