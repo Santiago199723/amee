@@ -133,3 +133,11 @@ function comprarAgora() {
 if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
   document.querySelector(".main3").style.backgroundImage = "none";
 }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+      document.getElementById("ios-image").style.display = "block";
+    }
+  });
+
