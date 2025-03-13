@@ -86,23 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  function trocarImagem(indice) {
-    const imagens = ["camisa.png", "camisa2.png"]; // Substitua pelos nomes corretos das imagens
-    const imagemProduto = document.getElementById("product-image");
-
-    if (indice >= 0 && indice < imagens.length) {
-        imagemProduto.src = imagens[indice];
-    }
-}
+  
 
 
   function comprarAgora() {
       window.location.href = "https://wa.link/hna1dm";
   }
 
-  document.querySelectorAll(".controls button").forEach((button, index) => {
-      button.addEventListener("click", () => trocarImagem(index));
-  });
+
 
   // Animação de aparecimento da seção .main3
   const section = document.querySelector(".main3");
