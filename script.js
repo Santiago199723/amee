@@ -38,6 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  video.addEventListener("play", () => {
+    if (audio.paused) {
+        audio.play();
+    }
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+});
+
+video.addEventListener("pause", () => {
+    audio.pause();
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+});
+
+
   const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
 const preloadedImages = [];
 
