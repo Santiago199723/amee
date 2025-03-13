@@ -516,6 +516,11 @@ p {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  .main {
+    background-attachment: scroll;
+  }
+}
 
 
 .main4 {
