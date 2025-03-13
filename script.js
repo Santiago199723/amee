@@ -40,16 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Troca automática de imagem de fundo
   setInterval(() => {
-      loo++;
-      const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
-      img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagens[loo]}')`;
+    const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
+    
+    loo++;
+    if (loo >= imagens.length) {
+        loo = 0; // Reinicia corretamente para a primeira imagem
+    }
 
-      if (loo >= imagens.length - 1) {
-          loo = -1; // Reinicia o loop
-      }
+    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagens[loo]}')`;
 
-      console.log(`Imagem trocada para: ${imagens[loo]}`);
-  }, 5000);
+    console.log(`Imagem trocada para: ${imagens[loo]}`);
+}, 5000);
+
 
   // Função para obter o próximo sábado às 15:30
   function getNextSaturday() {
