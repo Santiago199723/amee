@@ -494,6 +494,7 @@ p {
   overflow: hidden;
 }
 
+/* Aplica a imagem de fundo apenas em Android */
 .main3::before {
   content: "";
   position: absolute;
@@ -506,6 +507,13 @@ p {
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
+}
+
+/* Oculta a imagem no iOS */
+@supports (-webkit-touch-callout: none) {
+  .main3::before {
+    display: none;
+  }
 }
 
 

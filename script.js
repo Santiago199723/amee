@@ -130,4 +130,6 @@ function comprarAgora() {
   window.location.href = "https://wa.link/hna1dm";
 }
 
-
+if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+  document.querySelector(".main3").style.backgroundImage = "none";
+}
