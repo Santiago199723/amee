@@ -475,6 +475,9 @@ p {
   opacity: 0; /* Começa invisível */
   transform: translateY(50px); /* Levemente deslocada para baixo */
   transition: opacity 1s ease-out, transform 1s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main3.show {
@@ -489,7 +492,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("outra.png");
+  background-image: url("kkkk.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -797,5 +800,53 @@ footer {
 
   .pastor-cards {
     width: 90%; /* Ajusta os cards em telas menores */
+  }
+}
+
+.main2-right,
+.main2-left {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.ame-container {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  padding: 0.5em 1em;
+  z-index: 1;
+}
+
+.ame {
+  margin: 0;
+  font-size: 25rem;
+  font-weight: bold;
+  position: relative;
+  color: transparent;
+  background-image: url("kkkk.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@media (max-width: 600px) {
+  .ame {
+    font-size: 10rem;
+  }
+
+  .main3 {
+    z-index: -99999999;
+    margin-top: -17.3vh;
+    margin-bottom: -18.3vh;
   }
 }
