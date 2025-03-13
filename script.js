@@ -1,133 +1,121 @@
-let img = document.getElementById('bg-img')
-
-let loo = 0;
-
 document.addEventListener("DOMContentLoaded", function () {
+  let img = document.getElementById('bg-img'); // Agora declarado apenas aqui
+  let loo = 0;
+
+  // Reproduzir áudio automaticamente
   let audio = document.getElementById("background-music");
   audio.play().catch(error => console.log("Autoplay bloqueado pelo navegador:", error));
 
-  // Quando a música terminar, não repete
+  // Quando a música termina
   audio.addEventListener("ended", function () {
       console.log("Música finalizada!");
   });
-});
 
-const video = document.getElementById("meuVideo");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const muteBtn = document.getElementById("muteBtn");
-const audio = document.getElementById("background-music"); // Pegando o elemento de áudio
+  // Controle de vídeo e áudio
+  const video = document.getElementById("meuVideo");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const muteBtn = document.getElementById("muteBtn");
 
-playPauseBtn.addEventListener("click", () => {
-  if (video.paused) {
-      video.play();
-      audio.play(); // 🔊 Agora o áudio também toca!
-      playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'; // Ícone de pausa
-  } else {
-      video.pause();
-      audio.pause(); // 🔇 O áudio também pausa se o vídeo parar
-      playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // Ícone de play
-  }
-});
+  playPauseBtn.addEventListener("click", () => {
+      if (video.paused) {
+          video.play();
+          audio.play();
+          playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      } else {
+          video.pause();
+          audio.pause();
+          playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      }
+  });
 
-if (muteBtn) {
-  muteBtn.addEventListener("click", () => {
-  if (video.muted) {
-      video.muted = false;
-      audio.muted = false; // 🔊 Desmuta o áudio junto com o vídeo
-      muteBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; // Ícone de volume ligado
-  } else {
-      video.muted = true;
-      audio.muted = true; // 🔇 Muta o áudio junto com o vídeo
-      muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'; // Ícone de volume desligado
-  }
-});
-}
-
-
-
-
-setInterval(() => {
-
-  loo++
-
-  if (loo == 1) {
-
-    img.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('1.jpg')";
-
-  }
-  if (loo == 2) {
-
-    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(bg.jpg)`
-
+  if (muteBtn) {
+      muteBtn.addEventListener("click", () => {
+          video.muted = !video.muted;
+          audio.muted = !audio.muted;
+          muteBtn.innerHTML = video.muted ? 
+              '<i class="fa-solid fa-volume-xmark"></i>' : 
+              '<i class="fa-solid fa-volume-high"></i>';
+      });
   }
 
-  if (loo == 3) {
+  // Troca automática de imagem de fundo
+  setInterval(() => {
+      loo++;
+      const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
+      img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagens[loo]}')`;
 
-    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(imagem3.jpeg)`
+      if (loo >= imagens.length - 1) {
+          loo = -1; // Reinicia o loop
+      }
 
-  }
-  if( loo == 4 ){
+      console.log(`Imagem trocada para: ${imagens[loo]}`);
+  }, 5000);
 
-     img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(five.jpg)`
-  }
-  if (loo > 3) {
-
-    loo = 0 ;
-  }
-
-  console.log(loo);
-
-}, 5000);
-
-function getNextSaturday() {
-  let now = new Date();
-  let nextSaturday = new Date(now);
-  nextSaturday.setDate(now.getDate() + (6 - now.getDay() + 7) % 7);
-  nextSaturday.setHours(15, 30, 0, 0);
-  return nextSaturday;
-}
-
-function updateCountdown() {
-  let eventDate = getNextSaturday().getTime();
-  let now = new Date().getTime();
-  let distance = eventDate - now;
-
-  if (distance <= 0) {
-      document.querySelector(".countdown").innerHTML = "¡El evento ya comenzó!";
-      return;
+  // Função para obter o próximo sábado às 15:30
+  function getNextSaturday() {
+      let now = new Date();
+      let nextSaturday = new Date(now);
+      nextSaturday.setDate(now.getDate() + (6 - now.getDay() + 7) % 7);
+      nextSaturday.setHours(15, 30, 0, 0);
+      return nextSaturday;
   }
 
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  function updateCountdown() {
+      let eventDate = getNextSaturday().getTime();
+      let now = new Date().getTime();
+      let distance = eventDate - now;
 
-  document.getElementById("days").textContent = String(days).padStart(2, '0');
-  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+      if (distance <= 0) {
+          document.querySelector(".countdown").innerHTML = "¡El evento ya comenzó!";
+          return;
+      }
 
-  localStorage.setItem("countdown", JSON.stringify({ days, hours, minutes, seconds }));
-}
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+      localStorage.setItem("countdown", JSON.stringify({ days, hours, minutes, seconds }));
+  }
+
   setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  function trocarImagem(indice) {
+    const imagens = ["camisa.png", "camisa2.png"]; // Substitua pelos nomes corretos das imagens
+    const imagemProduto = document.getElementById("product-image");
+
+    if (indice >= 0 && indice < imagens.length) {
+        imagemProduto.src = imagens[indice];
+    }
+}
+
+
+  function comprarAgora() {
+      window.location.href = "https://wa.link/hna1dm";
+  }
+
+  document.querySelectorAll(".controls button").forEach((button, index) => {
+      button.addEventListener("click", () => trocarImagem(index));
+  });
+
+  // Animação de aparecimento da seção .main3
+  const section = document.querySelector(".main3");
+
+  if (section) {
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  section.classList.add("show");
+              }
+          });
+      });
+
+      observer.observe(section);
+  }
 });
-
-
-const images = [
-  "camisa.png",
-  "verso.png",
-];
-let currentIndex = 0;
-
-function trocarImagem(index) {
-  document.getElementById("product-image").src = images[index];
-}
-
-function comprarAgora() {
-  window.location.href = "https://wa.link/hna1dm";
-}
-
-

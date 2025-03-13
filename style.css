@@ -492,6 +492,14 @@ p {
   min-height: 65vh;
   width: 100%;
   overflow: hidden;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(50px); /* Levemente deslocada para baixo */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main3.show {
+  opacity: 1;
+  transform: translateY(0); /* Volta para posição normal */
 }
 
 .main3::before {
@@ -501,7 +509,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("outra.jpeg");
+  background-image: url("outra.png");
   background-size: cover;
   background-position: center;
   background-attachment: scroll; /* Ou apenas remova esta linha */
