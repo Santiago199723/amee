@@ -38,19 +38,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
+const preloadedImages = [];
+
+imagens.forEach(src => {
+    const img = new Image();
+    img.src = src;
+    preloadedImages.push(img);
+});
+
+
+
   // Troca automática de imagem de fundo
   setInterval(() => {
-    const imagens = ["1.jpg", "bg.jpg", "imagem3.jpeg", "five.jpg"];
-    
-    loo++;
+    loo++; // Avança para a próxima imagem
     if (loo >= imagens.length) {
-        loo = 0; // Reinicia corretamente para a primeira imagem
+        loo = 0; // Reinicia o índice
     }
 
-    img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagens[loo]}')`;
+    const novaImagem = new Image();
+    novaImagem.src = imagens[loo];
 
-    console.log(`Imagem trocada para: ${imagens[loo]}`);
+    novaImagem.onload = () => {
+        img.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagens[loo]}')`;
+        console.log(`Imagem trocada para: ${imagens[loo]}`);
+    };
 }, 5000);
+
 
 
   // Função para obter o próximo sábado às 15:30
